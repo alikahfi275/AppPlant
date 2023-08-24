@@ -14,6 +14,7 @@ import TarpperwareLemonBalm from './TarpperwareLemonBalm.png';
 import TarpperwareRosewood from './TarpperwareRosewood.png';
 import TarpperwareTrang from './TarpperwareTrang.png';
 import WadahAir from './WadahAir.png';
+import ImageIklan from './imageIklan.png';
 
 export {
   BananaPlant,
@@ -32,4 +33,5 @@ export {
   TarpperwareRosewood,
   TarpperwareTrang,
   WadahAir,
+  ImageIklan,
 };

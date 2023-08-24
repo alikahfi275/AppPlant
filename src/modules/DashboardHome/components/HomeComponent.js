@@ -4,18 +4,20 @@ import HeaderHomeComponent from './HeaderHomeComponent';
 import {FlashList} from '@shopify/flash-list';
 import {data} from '../../../property/data/DummyData';
 import View from '../../../components/View';
-import Text from '../../../components/Text';
 import ListProduct from '../../../components/ListProduct';
+import FooterHomeComponent from './FooterHomeComponent';
 
 const HomeComponent = () => {
   return (
     <View style={styles.styContainer}>
-      <HeaderHomeComponent />
       <FlashList
+        ListHeaderComponent={<HeaderHomeComponent />}
         data={data}
         renderItem={({item}) => <ListProduct item={item} />}
         estimatedItemSize={200}
         numColumns={2}
+        showsVerticalScrollIndicator={false}
+        ListFooterComponent={<FooterHomeComponent />}
       />
     </View>
   );
