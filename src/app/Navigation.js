@@ -1,14 +1,17 @@
 import * as React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import HomeContainer from '../modules/DashboardHome/containers/HomeContainer';
-import SearchContainer from '../modules/DashboardSearch/containers/SearchContainer';
-import NotifikasiContainer from '../modules/DashboardNotifikasi/containers/NotifikasiContainer';
-import UserContainer from '../modules/DashboardUser/containers/UserContainer';
 import BottomTab from './BottomTab';
+import {useEffect} from 'react';
+import SplashScreen from 'react-native-splash-screen';
 
 const Stack = createNativeStackNavigator();
 
-function App() {
+function Navigation() {
+  useEffect(() => {
+    setTimeout(() => {
+      if (Platform.OS === 'android') SplashScreen.hide();
+    }, 1500);
+  }, []);
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="BottomTab" component={BottomTab} />
@@ -16,4 +19,4 @@ function App() {
   );
 }
 
-export default App;
+export default Navigation;
